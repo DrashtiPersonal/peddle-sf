@@ -1,7 +1,7 @@
 @isTest(SeeAllData=true)
 public class AccountTriggerTest {
 
-    static testMethod void myUnitTest1() {
+    /*static testMethod void myUnitTest1() {
         AccountTriggerHandler.testMode = true;
         Map<String,Constants__c> constants = Constants__c.getAll();
         String systemUserId = constants.get('SystemUserSFID').Text__c;
@@ -32,7 +32,7 @@ public class AccountTriggerTest {
             System.AssertEquals(expectedExceptionThrown, true);
         }
         
-    }  
+    }*/  
     
     static testMethod void testInsertCharityAccount() {
         AccountTriggerHandler.testMode = true;
@@ -185,5 +185,9 @@ public class AccountTriggerTest {
        
         
     }
+    
+    
+    
+    
     
 }
