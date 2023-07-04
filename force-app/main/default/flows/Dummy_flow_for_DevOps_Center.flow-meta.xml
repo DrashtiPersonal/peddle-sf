@@ -21,7 +21,7 @@
         <name>Copy_1_of_Increment_counter</name>
         <label>Copy 1 of Increment counter</label>
         <locationX>264</locationX>
-        <locationY>458</locationY>
+        <locationY>650</locationY>
         <assignmentItems>
             <assignToReference>varCounter</assignToReference>
             <operator>Add</operator>
@@ -30,7 +30,7 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Loop_on_Account</targetReference>
+            <targetReference>Copy_1_of_Loop_on_Account</targetReference>
         </connector>
     </assignments>
     <assignments>
@@ -46,12 +46,23 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Copy_1_of_Increment_counter</targetReference>
+            <targetReference>Loop_on_Account</targetReference>
         </connector>
     </assignments>
     <environments>Default</environments>
     <interviewLabel>Dummy flow for DevOps Center {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Dummy flow for DevOps Center</label>
+    <loops>
+        <name>Copy_1_of_Loop_on_Account</name>
+        <label>Copy 1 of Loop on Account</label>
+        <locationX>176</locationX>
+        <locationY>542</locationY>
+        <collectionReference>varAccounts</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Copy_1_of_Increment_counter</targetReference>
+        </nextValueConnector>
+    </loops>
     <loops>
         <name>Loop_on_Account</name>
         <label>Loop on Account</label>
@@ -62,6 +73,9 @@
         <nextValueConnector>
             <targetReference>Increment_counter</targetReference>
         </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Copy_1_of_Loop_on_Account</targetReference>
+        </noMoreValuesConnector>
     </loops>
     <processMetadataValues>
         <name>BuilderType</name>
