@@ -3,5 +3,5 @@
     <fullName>demo_validation</fullName>
     <active>true</active>
     <errorConditionFormula>false</errorConditionFormula>
-    <errorMessage>this is not an issue. Only for DevOps center scenario</errorMessage>
+    <errorMessage>this is not an issue. Only for the DevOps center scenario...</errorMessage>
 </ValidationRule>
