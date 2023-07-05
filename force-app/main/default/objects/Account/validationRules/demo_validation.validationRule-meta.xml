@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>demo_validation</fullName>
-    <active>true</active>
-    <errorConditionFormula>false</errorConditionFormula>
-    <errorMessage>this is not an issue. Only for the DevOps center scenario...</errorMessage>
-</ValidationRule>
