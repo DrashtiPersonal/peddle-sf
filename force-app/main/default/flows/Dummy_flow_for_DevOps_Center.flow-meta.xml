@@ -18,22 +18,6 @@
         </connector>
     </assignments>
     <assignments>
-        <name>Copy_1_of_Increment_counter1</name>
-        <label>Increment counter</label>
-        <locationX>264</locationX>
-        <locationY>650</locationY>
-        <assignmentItems>
-            <assignToReference>varCounter</assignToReference>
-            <operator>Add</operator>
-            <value>
-                <numberValue>1.0</numberValue>
-            </value>
-        </assignmentItems>
-        <connector>
-            <targetReference>Loop_on_Account1</targetReference>
-        </connector>
-    </assignments>
-    <assignments>
         <name>Increment_counter</name>
         <label>Increment counter</label>
         <locationX>264</locationX>
@@ -47,6 +31,22 @@
         </assignmentItems>
         <connector>
             <targetReference>Loop_on_Account</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Increment_counter_on_Offer</name>
+        <label>Increment counter on Offer</label>
+        <locationX>264</locationX>
+        <locationY>650</locationY>
+        <assignmentItems>
+            <assignToReference>varCounter</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <numberValue>1.0</numberValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_on_Offer</targetReference>
         </connector>
     </assignments>
     <environments>Default</environments>
@@ -63,18 +63,18 @@
             <targetReference>Increment_counter</targetReference>
         </nextValueConnector>
         <noMoreValuesConnector>
-            <targetReference>Loop_on_Account1</targetReference>
+            <targetReference>Loop_on_Offer</targetReference>
         </noMoreValuesConnector>
     </loops>
     <loops>
-        <name>Loop_on_Account1</name>
-        <label>Loop on Account</label>
+        <name>Loop_on_Offer</name>
+        <label>Loop on Offer</label>
         <locationX>176</locationX>
         <locationY>542</locationY>
         <collectionReference>varAccounts</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
-            <targetReference>Copy_1_of_Increment_counter1</targetReference>
+            <targetReference>Increment_counter_on_Offer</targetReference>
         </nextValueConnector>
     </loops>
     <processMetadataValues>
