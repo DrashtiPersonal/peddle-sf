@@ -18,10 +18,10 @@
         </connector>
     </assignments>
     <assignments>
-        <name>Copy_1_of_Increment_counter1</name>
-        <label>Increment counter</label>
+        <name>Copy_1_of_Increment_counter_on_Offer</name>
+        <label>Copy 1 of Increment counter on Offer</label>
         <locationX>264</locationX>
-        <locationY>650</locationY>
+        <locationY>950</locationY>
         <assignmentItems>
             <assignToReference>varCounter</assignToReference>
             <operator>Add</operator>
@@ -30,7 +30,7 @@
             </value>
         </assignmentItems>
         <connector>
-            <targetReference>Loop_on_Account1</targetReference>
+            <targetReference>Copy_1_of_Loop_on_Offer</targetReference>
         </connector>
     </assignments>
     <assignments>
@@ -49,9 +49,36 @@
             <targetReference>Loop_on_Account</targetReference>
         </connector>
     </assignments>
+    <assignments>
+        <name>Increment_counter_on_Offer</name>
+        <label>Increment counter on Offer</label>
+        <locationX>264</locationX>
+        <locationY>650</locationY>
+        <assignmentItems>
+            <assignToReference>varCounter</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <numberValue>1.0</numberValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_on_Offer</targetReference>
+        </connector>
+    </assignments>
     <environments>Default</environments>
     <interviewLabel>Dummy flow for DevOps Center {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Dummy flow for DevOps Center</label>
+    <loops>
+        <name>Copy_1_of_Loop_on_Offer</name>
+        <label>Copy 1 of Loop on Offer</label>
+        <locationX>176</locationX>
+        <locationY>842</locationY>
+        <collectionReference>varAccounts</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Copy_1_of_Increment_counter_on_Offer</targetReference>
+        </nextValueConnector>
+    </loops>
     <loops>
         <name>Loop_on_Account</name>
         <label>Loop on Account</label>
@@ -63,19 +90,22 @@
             <targetReference>Increment_counter</targetReference>
         </nextValueConnector>
         <noMoreValuesConnector>
-            <targetReference>Loop_on_Account1</targetReference>
+            <targetReference>Loop_on_Offer</targetReference>
         </noMoreValuesConnector>
     </loops>
     <loops>
-        <name>Loop_on_Account1</name>
-        <label>Loop on Account</label>
+        <name>Loop_on_Offer</name>
+        <label>Loop on Offer</label>
         <locationX>176</locationX>
         <locationY>542</locationY>
         <collectionReference>varAccounts</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
-            <targetReference>Copy_1_of_Increment_counter1</targetReference>
+            <targetReference>Increment_counter_on_Offer</targetReference>
         </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Copy_1_of_Loop_on_Offer</targetReference>
+        </noMoreValuesConnector>
     </loops>
     <processMetadataValues>
         <name>BuilderType</name>
